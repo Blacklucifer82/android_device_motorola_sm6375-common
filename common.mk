@@ -193,7 +193,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.4.vendor \
     android.hardware.drm-service.clearkey \
-    libcrypto_shim.vendor
 
 # fastbootd
 PRODUCT_PACKAGES += \
@@ -283,8 +282,7 @@ PRODUCT_PACKAGES += \
 
 # Moto hardware
 PRODUCT_PACKAGES += \
-    MotoActions \
-    MotoCommonOverlay
+
 
 # Neural Networks
 PRODUCT_PACKAGES += \
@@ -415,7 +413,6 @@ PRODUCT_PACKAGES += \
     extphonelib-product \
     extphonelib.xml \
     extphonelib_product.xml \
-    MotoNrEnabler \
     ims-ext-common \
     ims_ext_common.xml \
     qti-telephony-hidl-wrapper \
@@ -480,7 +477,6 @@ PRODUCT_ENFORCE_ARTIFACT_PATH_REQUIREMENTS := strict
 PRODUCT_PACKAGES += \
     android.hardware.wifi-service \
     hostapd \
-    libqsap_sdk \
     libwpa_client \
     libwifi-hal-ctrl \
     libwifi-hal-qcom \
