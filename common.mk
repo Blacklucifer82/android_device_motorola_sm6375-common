@@ -79,11 +79,8 @@ PRODUCT_COPY_FILES += \
 
 # Boot control
 PRODUCT_PACKAGES += \
-    android.hardware.boot@1.1-impl-qti \
-    android.hardware.boot@1.1-impl-qti.recovery \
-    android.hardware.boot@1.1-service \
-    bootctrl.holi \
-    bootctrl.holi.recovery
+    android.hardware.boot-service.qti \
+    android.hardware.boot-service.qti.recovery
 
 PRODUCT_PACKAGES_DEBUG += \
     bootctl
@@ -308,10 +305,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
 
-# RFS MDM MPSS symlinks
-PRODUCT_PACKAGES += \
-    rfs_mdm_mpss_readonly_vendor_fsg_symlink
-
 # RFS MSM MPSS symlinks
 PRODUCT_PACKAGES += \
     rfs_msm_mpss_readonly_vendor_fsg_symlink
@@ -326,6 +319,7 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/google/interfaces \
     hardware/google/pixel \
     hardware/lineage/interfaces/power-libperfmgr \
+    hardware/motorola \
     hardware/qcom-caf/common/libqti-perfd-client
 
 # Telephony
@@ -384,9 +378,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     vendor/qcom/opensource/vibrator/excluded-input-devices.xml:$(TARGET_COPY_OUT_VENDOR)/etc/excluded-input-devices.xml
-
-# VNDK
-PRODUCT_ENFORCE_ARTIFACT_PATH_REQUIREMENTS := strict
 
 # WiFi
 PRODUCT_PACKAGES += \
