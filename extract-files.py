@@ -54,6 +54,8 @@ lib_fixups: lib_fixups_user_type = {
 }
 
 blob_fixups: blob_fixups_user_type = {
+    'system_ext/bin/wfdservice': blob_fixup()
+        .add_needed('libwfdservice_shim.so'),
     'system_ext/etc/permissions/moto-telephony.xml': blob_fixup()
         .regex_replace('/system/', '/system_ext/'),
     'system_ext/priv-app/ims/ims.apk': blob_fixup()
@@ -69,6 +71,10 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('android.media.audio.common.types-V2-cpp.so', 'android.media.audio.common.types-V4-cpp.so'),
     'vendor/etc/vintf/manifest/vendor.dolby.media.c2@1.0-service.xml': blob_fixup()
         .regex_replace('IComponentStore/default9', 'IComponentStore/default'),
+    'vendor/etc/qcril_database/qcrilNr.db': blob_fixup()
+        .patch_file('qcril-patches/qcrilNr.db.patch'),
+    'vendor/etc/qcril_database/upgrade/config/6.0_config.sql': blob_fixup()
+        .patch_file('qcril-patches/6.0_config.sql.patch'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
